@@ -1,7 +1,31 @@
-var inputBill = Number(prompt("What is your bill?"))
-var taxAmount = inputBill*.07
-var taxTotalBill = inputBill+taxAmount
-var tipAmount = taxTotalBill*.05
-var total = tipAmount+taxTotalBill
-var element = document.body.querySelector(".box")
-element.innerHTML=total
+var box = document.body.querySelector(".box")
+
+var n1 = Number(prompt("Enter a number"))
+var op = String(prompt("Enter an operator: +,-,/,*"))
+var n2 = Number(prompt("Enter another number"))
+
+if(isNaN(n1)) {
+    box.innerHTML = "Invalid number 1"
+} else if(op !== "+" && op !== "-" && op !== "/" && op !== "*") {
+    box.innerHTML = "Invalid operator"
+} else if(isNaN(n2)) {
+    box.innerHTML = "Invalid number 2"
+} else{
+    if(op == "+"){
+        box.innerHTML = "Your answer is: " + Number(n1+n2)
+    }
+    if(op == "-"){
+        box.innerHTML = "Your answer is: " + Number(n1-n2)
+    }
+    if(op == "/"){
+        box.innerHTML = "Your answer is: " + Number(n1/n2)
+    }
+    if(op == "*"){
+        box.innerHTML = "Your answer is: " + Number(n1*n2)
+    }
+}
+
+
+
+
+
